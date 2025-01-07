@@ -1,9 +1,9 @@
 Name: YOUR NAME HERE
 
-| Date    |  Time  |                                     Update |
-|:--------|:------:|-------------------------------------------:|
-| April 5 | 9-10pm | I tried to write abstract, efficient code. |
-|         |        |                                            |
+| Date      |      Time       |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        Update |
+|:----------|:---------------:|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
+| January 6 |  9:20 - 9:55AM  | Most of this time was used to think how to approach this problem. The first thing I thought of was using a TST to store the dictionary words and also to make fast look ups. Additionally, I though about using bread first search to go through the boards and find all the possible words. However, after speaking to Mr. Blick, he showed me that Depth First Search would actually be more benificial than Bread First Search since with DFS you traverse the board in a single chain. And so, I reviewed DFS and created a stack since DFS uses a stack. |
+| January 6 | 9:25 - 10:05 PM |                                                                                                                                                                          I decided to use previous TST code and created a TST. I used a for loop to traverse through the dictionary words and inserted them into the TST. Additionally, after thinking for some time, I created a nested for loop to go through each letter in the board (like as the first letter in the chain). My next step is to create a function which actually goes through the board. |
 
 
 To add a new row to the table, click into a cell and then hit shift-enter.
