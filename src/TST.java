@@ -19,7 +19,7 @@ public class TST {
     private class Node {
         Node left, mid, right;
         char c;
-        int code;
+        boolean isWord;
     }
 
     /**
@@ -37,6 +37,9 @@ public class TST {
             n = new Node();
             n.c = current;
         }
+        if(depth == s.length() - 1){
+            n.isWord = true;
+        }
         if (current < n.c)
             n.left = insert(s, n.left, code, depth);
         else if (current > n.c)
@@ -44,7 +47,6 @@ public class TST {
         else if (depth < s.length() - 1) {
             n.mid = insert(s, n.mid, code, depth + 1);
         }
-        else n.code = code;
         return n;
     }
 
@@ -83,12 +85,12 @@ public class TST {
      * @return the correcponding code. If no code is associated, or if the target word is not
      * present, EMPTY is returned.
      */
-    public int lookup(String s) {
+    public boolean lookup(String s) {
         return lookup(s, root, 0);
     }
 
-    public int lookup(String s, Node n, int depth) {
-        if (n == null) return EMPTY;
+    public boolean lookup(String s, Node n, int depth) {
+        if (n == null) return false;
 
         char current = s.charAt(depth);
         if (current < n.c)
@@ -97,7 +99,7 @@ public class TST {
             return lookup(s, n.right, depth);
         else if (depth < s.length() - 1)
             return lookup(s, n.mid, depth + 1);
-        else return n.code;
+        else return n.isWord;
 
     }
 
@@ -115,7 +117,7 @@ public class TST {
 
         // If this node ends a word, print it out!
         s += n.c;
-        if (n.code != EMPTY) System.out.println(s);
+        //if (n.code != EMPTY) System.out.println(s);
 
         printTST(n.left, s);
         printTST(n.mid, s);
